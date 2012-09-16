@@ -27,9 +27,9 @@ public class EmployeeCommission2
         public EmployeeCommission2(double s)
 	{
             sales = s;
-            calculatePay();
-	}
-	
+            calculatePay();  
+        }
+        
 	/**
 	* The setRate method sets the rate of commission.
         * This method is called from the calculatePay method.
