@@ -18,16 +18,42 @@ public class EmployeeCommission2
                         pay,            // Commission + Salary
                         target;         // Target Sales amount
                 char    reached;        // y/n for target reached
-	/**
+
+                /**
 	* The constructor uses a parameter to accept
 	* argument: s. The value in s is assigned to
-	* the sales field. The calculatePay method is called.
+	* the sales field by the setSales method. 
+        * The calculatePay method is called.
 	*/
 
         public EmployeeCommission2(double s)
 	{
+            // set the sales
+            setSales(s);
+            calculatePay();
+	}
+	
+        /**
+         * The setSales method sets the annual sales
+         */
+        private void setSales(double s) 
+        {
             sales = s;
+        }
+        
+        /**
+         * The modifySales method allows changing
+         * the annual sales figure and will 
+         * recalculate employee compensation
+         */
+        public double modifySales(double s)
+        {
+          // change the sales
+            setSales(s);
+            // recalculate the pay info
             calculatePay();  
+            // return the new compensation
+            return getCommission();
         }
         
 	/**

@@ -65,8 +65,6 @@ public class CommissionCalculation2
         //Compensation Table Loop//
                
          // Constants
-        //final double maxComp = payInfo.getSales() * .5;
-        
         // range is from annual sales this year to 50% ABOVE
         // the annual sales.  ie annual sales * 150% or 1.5
         final double maxComp = payInfo.getSales() * 1.5;
@@ -79,10 +77,9 @@ public class CommissionCalculation2
 
         for (sale = payInfo.getSales(); sale <= maxComp; sale += increment)
         {
-            // need to update/set thew new sales target
+            // recalculated compensation based on projected sales figure
+              comp = payInfo.modifySales(sale);
             
-              comp = payInfo.modifySales( sale );
-
              System.out.println("| " + sale + "\t|\t" + comp + " |");     
         }
     }
